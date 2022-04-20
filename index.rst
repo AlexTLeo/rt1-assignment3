@@ -23,7 +23,7 @@ Quick Start
 ============
 
 Installation
-------------
+...........
 The simulator requires ROS. Clone this repository into your ROS workspace's src/ folder.
 
 .. code-block:: bash
@@ -43,7 +43,7 @@ It also requires the final_assignment package, the slam_gmapping package, and th
 Make sure to switch to the noetic branch on the git repositories!
 
 Execution
----------
+.........
 Launch the simulation.
 
 .. code-block:: bash

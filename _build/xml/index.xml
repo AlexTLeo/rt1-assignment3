@@ -31,6 +31,15 @@
   <compound refid="index_8rst_8txt" kind="file"><name>index.rst.txt</name>
     <member refid="index_8rst_8txt_1a9aca65248380e5f782c0cda76ecd5e01" kind="variable"><name>file</name></member>
     <member refid="index_8rst_8txt_1a1b80140953e9c6f42d1ed0b35f852cfe" kind="variable"><name>Apr</name></member>
+    <member refid="index_8rst_8txt_1af45e74ba11b8b6961a1f5e7d090d4303" kind="variable"><name>Documentation</name></member>
+    <member refid="index_8rst_8txt_1aa4fdf6860c3c8db060e27dceed362496" kind="variable"><name>degree</name></member>
+    <member refid="index_8rst_8txt_1aaf2e5fc666aaf1a28f554d316b6e48d8" kind="variable"><name>nodes</name></member>
+    <member refid="index_8rst_8txt_1a2c16fc8d5e97e8e4dd455960d445dd69" kind="variable"><name>package</name></member>
+    <member refid="index_8rst_8txt_1a1f05e876488e401d763e0f3bf52e4bce" kind="variable"><name>https</name></member>
+    <member refid="index_8rst_8txt_1a1090eb243d5ce693635a9484f3dbd33e" kind="variable"><name>controller</name></member>
+    <member refid="index_8rst_8txt_1aa05a5b31e058c753b7caa197c9224e3b" kind="variable"><name>ui</name></member>
+    <member refid="index_8rst_8txt_1aacb20c39128e4f53362b3973709b8e39" kind="variable"><name>helper</name></member>
+    <member refid="index_8rst_8txt_1a6f125006ac0f2ceb3c5bee1ee63e7359" kind="function"><name>robot</name></member>
   </compound>
   <compound refid="_l_i_c_e_n_s_e_8txt" kind="file"><name>LICENSE.txt</name>
     <member refid="_l_i_c_e_n_s_e_8txt_1ad5e66007a086e143d60e0a9a8be517ac" kind="variable"><name>free</name></member>
