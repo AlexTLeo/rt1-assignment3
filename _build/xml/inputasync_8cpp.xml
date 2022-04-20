@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="inputasync_8cpp" kind="file" language="C++">
+    <compoundname>inputasync.cpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">std_msgs/String.h</includes>
+    <includes local="no">std_msgs/Empty.h</includes>
+    <includes refid="utils_8h" local="yes">rt1-assignment3/utils.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>termios.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>rt1-assignment3/utils.h</label>
+        <link refid="utils_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>future</label>
+      </node>
+      <node id="1">
+        <label>src/inputasync.cpp</label>
+        <link refid="inputasync_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>unistd.h</label>
+      </node>
+      <node id="6">
+        <label>std_msgs/Empty.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="5">
+        <label>std_msgs/String.h</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>chrono</label>
+      </node>
+      <node id="9">
+        <label>thread</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="inputasync_8cpp_1a83132a58218fc1513e1bdf0794dd6bb8" prot="public" static="yes" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pubUI</definition>
+        <argsstring></argsstring>
+        <name>pubUI</name>
+        <briefdescription>
+<para>Publisher for &quot;/ui_inputasync&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/inputasync.cpp" line="44" column="23" bodyfile="src/inputasync.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="inputasync_8cpp_1afc2bbae7691ff2f64507d4c90964696d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void getInput</definition>
+        <argsstring>(const std_msgs::Empty::ConstPtr &amp;msg)</argsstring>
+        <name>getInput</name>
+        <param>
+          <type>const std_msgs::Empty::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Detects next keypress. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>does nothing for this function</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Detects the next keypress (in whichever console this node is running in) and publishes it to &quot;/ui_inputasync&quot;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/inputasync.cpp" line="57" column="6" bodyfile="src/inputasync.cpp" bodystart="57" bodyend="63" declfile="src/inputasync.cpp" declline="42" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="inputasync_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/inputasync.cpp" line="46" column="5" bodyfile="src/inputasync.cpp" bodystart="46" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Capture user inputs and publish them. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alex Thanaphon Leonardi </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 </para>
+</simplesect>
+<simplesect kind="date"><para>19/04/2022</para>
+</simplesect>
+<linebreak/>
+</para>
+<para>Subscribes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/ui_inputrequest</para>
+</listitem></itemizedlist>
+</para>
+<para>Publishes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/ui_inputasync</para>
+</listitem></itemizedlist>
+</para>
+<para>Description :</para>
+<para>This node asynchonrously captures user inputs and publishes them. Having an extra node that can handle inputs is very important, because inputs are generally blocking and it is not always feasible to interrupt everything until the user inputs something. To request user input, another node must simply publish any message to the &quot;/ui_inputrequest&quot; topic, and the next user input will be published to the &quot;/ui_inputasync&quot; topic. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/String.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/Empty.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rt1-assignment3/utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inputasync_8cpp_1afc2bbae7691ff2f64507d4c90964696d" kindref="member">getInput</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Empty::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ros::Publisher<sp/>pubUI;<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;rt1a3_inputasync&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subUI;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>pubUI<sp/>=<sp/>nh.advertise&lt;std_msgs::String&gt;(</highlight><highlight class="stringliteral">&quot;ui_inputasync&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>subUI<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;ui_inputrequest&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="inputasync_8cpp_1afc2bbae7691ff2f64507d4c90964696d" kindref="member">getInput</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inputasync_8cpp_1afc2bbae7691ff2f64507d4c90964696d" kindref="member">getInput</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Empty::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>std_msgs::String<sp/>input;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>std::string<sp/>str;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>str<sp/>=<sp/>detectKeyPress();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>input.data<sp/>=<sp/>str;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>pubUI.publish(input);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/inputasync.cpp"/>
+  </compounddef>
+</doxygen>

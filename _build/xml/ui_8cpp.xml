@@ -1,0 +1,596 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="ui_8cpp" kind="file" language="C++">
+    <compoundname>ui.cpp</compoundname>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">termios.h</includes>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">actionlib/client/simple_action_client.h</includes>
+    <includes local="no">actionlib/client/terminal_state.h</includes>
+    <includes local="no">move_base_msgs/MoveBaseAction.h</includes>
+    <includes local="no">move_base_msgs/MoveBaseGoal.h</includes>
+    <includes local="no">std_msgs/Empty.h</includes>
+    <includes local="no">std_msgs/Bool.h</includes>
+    <includes local="no">std_msgs/String.h</includes>
+    <includes local="no">geometry_msgs/Point.h</includes>
+    <includes local="no">actionlib_msgs/GoalID.h</includes>
+    <includes refid="utils_8h" local="yes">rt1-assignment3/utils.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>actionlib/client/terminal_state.h</label>
+      </node>
+      <node id="10">
+        <label>std_msgs/Bool.h</label>
+      </node>
+      <node id="3">
+        <label>termios.h</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>geometry_msgs/Point.h</label>
+      </node>
+      <node id="8">
+        <label>move_base_msgs/MoveBaseGoal.h</label>
+      </node>
+      <node id="14">
+        <label>rt1-assignment3/utils.h</label>
+        <link refid="utils_8h_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>move_base_msgs/MoveBaseAction.h</label>
+      </node>
+      <node id="17">
+        <label>future</label>
+      </node>
+      <node id="2">
+        <label>unistd.h</label>
+      </node>
+      <node id="9">
+        <label>std_msgs/Empty.h</label>
+      </node>
+      <node id="13">
+        <label>actionlib_msgs/GoalID.h</label>
+      </node>
+      <node id="5">
+        <label>actionlib/client/simple_action_client.h</label>
+      </node>
+      <node id="4">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="11">
+        <label>std_msgs/String.h</label>
+      </node>
+      <node id="15">
+        <label>iostream</label>
+      </node>
+      <node id="19">
+        <label>chrono</label>
+      </node>
+      <node id="18">
+        <label>thread</label>
+      </node>
+      <node id="1">
+        <label>src/ui.cpp</label>
+        <link refid="ui_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TEXT_DELAY</definition>
+        <argsstring></argsstring>
+        <name>TEXT_DELAY</name>
+        <initializer>= 25000</initializer>
+        <briefdescription>
+<para>Used for <ref refid="utils_8h_source" kindref="compound">utils.h</ref>/displayText(), delay between each printed character (in microseconds) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="74" column="11" bodyfile="src/ui.cpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ui_8cpp_1a5ca7b3213d58c7b843f49232a6a3b070" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool isComplete</definition>
+        <argsstring></argsstring>
+        <name>isComplete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="75" column="6" bodyfile="src/ui.cpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ui_8cpp_1afedb34919f84272937df7151f223895e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool isAutonomous</definition>
+        <argsstring></argsstring>
+        <name>isAutonomous</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="76" column="6" bodyfile="src/ui.cpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ui_8cpp_1a0b851c01986ab8e5f1d27fdabb219c6d" prot="public" static="yes" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pubGoalPointCancel</definition>
+        <argsstring></argsstring>
+        <name>pubGoalPointCancel</name>
+        <briefdescription>
+<para>Publisher to allow cancelling of goal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="79" column="23" bodyfile="src/ui.cpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getUserChoice</definition>
+        <argsstring>()</argsstring>
+        <name>getUserChoice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>1 (autonomous), 2 (manual) or 3 (assisted)</para>
+</simplesect>
+Queries user for their choice between autonomous, manual or assisted driving </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="236" column="5" bodyfile="src/ui.cpp" bodystart="236" bodyend="250" declfile="src/ui.cpp" declline="50" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="ui_8cpp_1a07dfbafabc14304689060ea076fc70b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printControllerInfo</definition>
+        <argsstring>(const std_msgs::String::ConstPtr &amp;msg)</argsstring>
+        <name>printControllerInfo</name>
+        <param>
+          <type>const std_msgs::String::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to be printed</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Prints information about the controller state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="252" column="6" bodyfile="src/ui.cpp" bodystart="252" bodyend="272" declfile="src/ui.cpp" declline="57" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ui_8cpp_1a0a525d04046e5faf439d0f2efe2e1a92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void timeoutTimerCallback</definition>
+        <argsstring>(const ros::TimerEvent &amp;event)</argsstring>
+        <name>timeoutTimerCallback</name>
+        <param>
+          <type>const ros::TimerEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeout event</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Globally flag that the robot has timed out </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="274" column="6" bodyfile="src/ui.cpp" bodystart="274" bodyend="281" declfile="src/ui.cpp" declline="64" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ui_8cpp_1a094fd0b21b31b2f6fc33b3e5d6ccb880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void getInputAsync</definition>
+        <argsstring>(const std_msgs::String::ConstPtr &amp;msg)</argsstring>
+        <name>getInputAsync</name>
+        <param>
+          <type>const std_msgs::String::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input received</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Gets input asynchronously through node &quot;rt1a3_inputasync&quot; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="283" column="6" bodyfile="src/ui.cpp" bodystart="283" bodyend="317" declfile="src/ui.cpp" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ui_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ui.cpp" line="81" column="5" bodyfile="src/ui.cpp" bodystart="81" bodyend="234"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface between user and robot controller. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alex Thanaphon Leonardi </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 </para>
+</simplesect>
+<simplesect kind="date"><para>19/04/2022</para>
+</simplesect>
+<linebreak/>
+</para>
+<para>Subscribes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/controller_stateinfo</para>
+</listitem><listitem><para>/ui_inputasync</para>
+</listitem></itemizedlist>
+</para>
+<para>Publishes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/user_goalpoints</para>
+</listitem><listitem><para>/move_base/cancel</para>
+</listitem><listitem><para>/controller_manual</para>
+</listitem><listitem><para>/controller_assisted</para>
+</listitem><listitem><para>/ui_inputrequest</para>
+</listitem></itemizedlist>
+</para>
+<para>Description :</para>
+<para>This node acts as the interface between the user and the robot. It communicates with the controller node to control the robot in 3 ways: autonomous driving, manual driving or assisted driving. To ensure the program does not block while waiting on certain types of input, this node works with the rt1a3_inputasync node. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="31"><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;termios.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/simple_action_client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/terminal_state.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;move_base_msgs/MoveBaseAction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;move_base_msgs/MoveBaseGoal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/Empty.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/Bool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/String.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Point.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib_msgs/GoalID.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rt1-assignment3/utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" kindref="member">getUserChoice</ref><sp/>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a07dfbafabc14304689060ea076fc70b6" kindref="member">printControllerInfo</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::String::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a0a525d04046e5faf439d0f2efe2e1a92" kindref="member">timeoutTimerCallback</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::TimerEvent&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a094fd0b21b31b2f6fc33b3e5d6ccb880" kindref="member">getInputAsync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::String::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref><sp/>=<sp/>25000;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isComplete;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAutonomous;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ros::Publisher<sp/>pubGoalPointCancel;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>inputX;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>inputY;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inputChoice;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>userInput;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>geometry_msgs::Point<sp/>msgGoalPoint;<sp/></highlight><highlight class="comment">//<sp/>Goal<sp/>point<sp/>for<sp/>autonomous<sp/>driving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>std_msgs::Bool<sp/>msgBool;<sp/></highlight><highlight class="comment">//<sp/>Manual<sp/>driving<sp/>on/off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;rt1a3_ui&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>ros::Publisher<sp/>pubGoalPoint;<sp/></highlight><highlight class="comment">//<sp/>Publishes<sp/>goal<sp/>points,<sp/>will<sp/>be<sp/>read<sp/>by<sp/>controller<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>ros::Publisher<sp/>pubManualDrive;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>ros::Publisher<sp/>pubAssistedDrive;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>ros::Publisher<sp/>pubInputRequest;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subControllerInfo;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subInputAsync;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>pubGoalPoint<sp/>=<sp/>nh.advertise&lt;geometry_msgs::Point&gt;(</highlight><highlight class="stringliteral">&quot;user_goalpoints&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>pubGoalPointCancel<sp/>=<sp/>nh.advertise&lt;actionlib_msgs::GoalID&gt;(</highlight><highlight class="stringliteral">&quot;move_base/cancel&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>pubManualDrive<sp/>=<sp/>nh.advertise&lt;std_msgs::Bool&gt;(</highlight><highlight class="stringliteral">&quot;controller_manual&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>pubAssistedDrive<sp/>=<sp/>nh.advertise&lt;std_msgs::Bool&gt;(</highlight><highlight class="stringliteral">&quot;controller_assisted&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>pubInputRequest<sp/>=<sp/>nh.advertise&lt;std_msgs::Empty&gt;(</highlight><highlight class="stringliteral">&quot;ui_inputrequest&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>subControllerInfo<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;controller_stateinfo&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="ui_8cpp_1a07dfbafabc14304689060ea076fc70b6" kindref="member">printControllerInfo</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>subInputAsync<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;ui_inputasync&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="ui_8cpp_1a094fd0b21b31b2f6fc33b3e5d6ccb880" kindref="member">getInputAsync</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>isAutonomous<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>ros::Duration(1).sleep();<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>there<sp/>are<sp/>error<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>user<sp/>input<sp/>on<sp/>what<sp/>to<sp/>do.<sp/>Then,<sp/>publish<sp/>the<sp/>appropriate<sp/>information<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>controller<sp/>node.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>user<sp/>input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(isUserDeciding)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>inputChoice<sp/>=<sp/><ref refid="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" kindref="member">getUserChoice</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(inputChoice)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>49:<sp/></highlight><highlight class="comment">//<sp/>Choice<sp/>1:<sp/>Autonomous<sp/>Goal<sp/>Point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>actionTimeout;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isComplete<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isAutonomous<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nh.getParam(</highlight><highlight class="stringliteral">&quot;/rt1a3_action_timeout&quot;</highlight><highlight class="normal">,<sp/>actionTimeout))<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ROS_INFO(&quot;Action<sp/>timeout<sp/>successfully<sp/>retrieved<sp/>from<sp/>parameter<sp/>server&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>retrieve<sp/>action<sp/>timeout<sp/>from<sp/>parameter<sp/>server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Mode:<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Autonomous<sp/>Goal<sp/>Point\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>user<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(isUserDeciding)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>inputX_str;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>inputY_str;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Input<sp/>goal<sp/>point<sp/>coordinates\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;X:<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>inputX_str;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Y:<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>inputY_str;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>input<sp/>is<sp/>numeric<sp/>or<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isStringNumeric(inputX_str)<sp/>||<sp/>!isStringNumeric(inputY_str))<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>input.<sp/>Please<sp/>insert<sp/>numeric<sp/>coordinates!\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Good<sp/>input!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inputX<sp/>=<sp/>std::stoi(inputX_str);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inputY<sp/>=<sp/>std::stoi(inputY_str);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Publish<sp/>new<sp/>goal<sp/>point<sp/>for<sp/>controller<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgGoalPoint.x<sp/>=<sp/>inputX;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgGoalPoint.y<sp/>=<sp/>inputY;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pubGoalPoint.publish(msgGoalPoint);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clearInputBuffer();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Driving...\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;\nPress<sp/>q<sp/>to<sp/>cancel<sp/>the<sp/>goal,<sp/>or<sp/>any<sp/>other<sp/>key<sp/>to<sp/>continue.\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>counter<sp/>to<sp/>timeout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Timer<sp/>timeoutTimer<sp/>=<sp/>nh.createTimer(ros::Duration(actionTimeout),<sp/><ref refid="ui_8cpp_1a0a525d04046e5faf439d0f2efe2e1a92" kindref="member">timeoutTimerCallback</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>User<sp/>is<sp/>allowed<sp/>to<sp/>cancel<sp/>the<sp/>robot&apos;s<sp/>goal<sp/>point:<sp/>listen<sp/>for<sp/>input!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>input<sp/>must<sp/>be<sp/>asynchronous!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std_msgs::Empty<sp/>msgEmpty;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pubInputRequest.publish(msgEmpty);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isComplete)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;\nTerminating<sp/>program...\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Duration(2).sleep();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Exit<sp/>because<sp/>we<sp/>are<sp/>done!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Duration(1).sleep();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>50:<sp/></highlight><highlight class="comment">//<sp/>Choice<sp/>2:<sp/>Manual<sp/>Driving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgBool.data<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Mode:<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Manual<sp/>Drive\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pubManualDrive.publish(msgBool);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>51:<sp/></highlight><highlight class="comment">//<sp/>Choice<sp/>3:<sp/>Assisted<sp/>Driving</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isUserDeciding<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgBool.data<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Mode:<sp/>&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Assisted<sp/>Drive\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pubAssistedDrive.publish(msgBool);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(41,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;\nInvalid.<sp/>Please<sp/>select<sp/>a<sp/>valid<sp/>option.\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::Duration(1).sleep();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inputChoice<sp/>=<sp/><ref refid="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" kindref="member">getUserChoice</ref>();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" kindref="member">getUserChoice</ref><sp/>()<sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inputChoice;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Choose<sp/>one<sp/>of<sp/>the<sp/>following<sp/>options:<sp/>\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/>terminalColor(32,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;1.<sp/>Autonomously<sp/>reach<sp/>coordinates\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;2.<sp/>Manual<sp/>driving\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;3.<sp/>Assisted<sp/>driving\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>inputChoice<sp/>=<sp/>detectKeyPress();</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>inputChoice;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a07dfbafabc14304689060ea076fc70b6" kindref="member">printControllerInfo</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::String::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isComplete)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isAutonomous)<sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Driving...\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\nPress<sp/>q<sp/>to<sp/>cancel<sp/>the<sp/>goal,<sp/>or<sp/>any<sp/>other<sp/>key<sp/>to<sp/>continue.\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>terminalColor(32,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[Controller]:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>msg-&gt;data;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>terminalColor(36,<sp/>false);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\n\nPress<sp/>ESC<sp/>to<sp/>select<sp/>a<sp/>new<sp/>driving<sp/>mode&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a0a525d04046e5faf439d0f2efe2e1a92" kindref="member">timeoutTimerCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::TimerEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/>isComplete<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>terminalColor(31,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Action<sp/>timed<sp/>out!<sp/>(Are<sp/>you<sp/>sure<sp/>the<sp/>goal<sp/>was<sp/>reachable?)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ui_8cpp_1a094fd0b21b31b2f6fc33b3e5d6ccb880" kindref="member">getInputAsync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::String::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>std::string<sp/>inputStr;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inputASCII;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>actionlib_msgs::GoalID<sp/>goalCancelID;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>inputStr<sp/>=<sp/>msg-&gt;data;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>inputASCII<sp/>=<sp/>(int)<sp/>inputStr[0];</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isComplete)<sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inputASCII<sp/>==<sp/>113)<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;q&quot;<sp/>pressed<sp/>-<sp/>cancel<sp/>goal!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Autonomous<sp/>driving<sp/>cancel<sp/>request<sp/>by<sp/>user.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Sending<sp/>goal<sp/>cancel<sp/>request...\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Setting<sp/>fields<sp/>for<sp/>cancel<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>goalCancelID.stamp.sec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>goalCancelID.stamp.nsec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>goalCancelID.id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pubGoalPointCancel.publish(goalCancelID);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(32,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;\nGoal<sp/>has<sp/>been<sp/>cancelled.\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>isComplete<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>clearTerminal();</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(37,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;Driving...\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>terminalColor(36,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>displayText(</highlight><highlight class="stringliteral">&quot;\nPress<sp/>q<sp/>to<sp/>cancel<sp/>the<sp/>goal,<sp/>or<sp/>any<sp/>other<sp/>key<sp/>to<sp/>continue.\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kindref="member">TEXT_DELAY</ref>);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/ui.cpp"/>
+  </compounddef>
+</doxygen>

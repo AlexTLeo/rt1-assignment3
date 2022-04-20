@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">**Institution:**<sp/>Università<sp/>di<sp/>Genova&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">**Course:**<sp/>MSc<sp/>in<sp/>Robotics<sp/>Engineering&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">**Subject:**<sp/>Research<sp/>Track<sp/>1&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">**Author:**<sp/>***Alex<sp/>Thanaphon<sp/>Leonardi***&lt;br&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Assignment<sp/>3</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>third<sp/>assignment<sp/>of<sp/>the<sp/>&quot;Research<sp/>Track<sp/>1&quot;<sp/>course,<sp/>for<sp/>the<sp/>Robotics<sp/>Engineering<sp/>degree,<sp/>Università<sp/>di<sp/>Genova.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>assignment<sp/>consists<sp/>in<sp/>writing<sp/>two<sp/>ROS<sp/>nodes:<sp/>a<sp/>controller<sp/>for<sp/>a<sp/>robot,<sp/>and<sp/>a<sp/>UI.<sp/>The<sp/>user<sp/>can<sp/>choose<sp/>one<sp/>of<sp/>three<sp/>methods<sp/>to<sp/>command<sp/>the<sp/>robot<sp/>(autonomously,<sp/>manually,<sp/>or<sp/>in<sp/>assisted<sp/>driving<sp/>mode).</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>helper<sp/>node<sp/>was<sp/>also<sp/>implemented<sp/>to<sp/>get<sp/>input<sp/>asynchronously,<sp/>i.e.<sp/>without<sp/>blocking<sp/>the<sp/>main<sp/>nodes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Running<sp/>the<sp/>program</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>simulator<sp/>requires<sp/>ROS.<sp/>Clone<sp/>this<sp/>repository<sp/>into<sp/>your<sp/>ROS<sp/>workspace&apos;s<sp/>src/<sp/>folder.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/ThanaphonLeonardi/rt1-assignment3</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>also<sp/>requires<sp/>the<sp/>final_assignment<sp/>package,<sp/>the<sp/>slam_gmapping<sp/>package,<sp/>and<sp/>the<sp/>ROS<sp/>navigation<sp/>stack</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/CarmineD8/final_assignment</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/CarmineD8/slam_gmapping</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-navigation</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Make<sp/>sure<sp/>to<sp/>switch<sp/>to<sp/>the<sp/>noetic<sp/>branch<sp/>on<sp/>the<sp/>git<sp/>repositories!</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Execution</highlight></codeline>
+<codeline><highlight class="normal">Launch<sp/>the<sp/>simulation.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>final_assignment<sp/>simulation_gmapping.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">And<sp/>the<sp/>node<sp/>that<sp/>manages<sp/>the<sp/>movement</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>final_assignment<sp/>move_base.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Finally,<sp/>run<sp/>the<sp/>controller,<sp/>ui,<sp/>helper,<sp/>and<sp/>teleop_twist_keyboard<sp/>node</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt1-assignment3<sp/>rt1a3.launch</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt1-assignment3<sp/>rt1a3_teleop.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Description</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>robot<sp/>can<sp/>be<sp/>controlled<sp/>according<sp/>to<sp/>three<sp/>modes:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Autonomous<sp/>Drive:<sp/>the<sp/>robot<sp/>can<sp/>be<sp/>given<sp/>a<sp/>pair<sp/>of<sp/>coordinates,<sp/>towards<sp/>which<sp/>it<sp/>will<sp/>autonomously<sp/>drive.<sp/>The<sp/>goal<sp/>can<sp/>be<sp/>cancelled<sp/>by<sp/>pressing<sp/>**q**.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Manual<sp/>Drive:<sp/>the<sp/>robot<sp/>can<sp/>be<sp/>manually<sp/>controlled<sp/>by<sp/>an<sp/>operator,<sp/>using<sp/>the<sp/>**teleop_twist_keyboard**<sp/>package.<sp/>By<sp/>choosing<sp/>this<sp/>option,<sp/>the<sp/>robot<sp/>can<sp/>be<sp/>controlled<sp/>via<sp/>the<sp/>terminal<sp/>on<sp/>which<sp/>the<sp/>rt1a3_teleop<sp/>launch<sp/>file<sp/>was<sp/>called,<sp/>using<sp/>the<sp/>keys<sp/>&quot;uiojklm,.&quot;.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Assisted<sp/>Drive:<sp/>same<sp/>as<sp/>manual<sp/>drive,<sp/>except<sp/>that<sp/>the<sp/>robot<sp/>will<sp/>now<sp/>actively<sp/>avoid<sp/>all<sp/>collisions,<sp/>even<sp/>superseding<sp/>user<sp/>input.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Behind<sp/>The<sp/>Scenes</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>**UI**<sp/>node<sp/>sends<sp/>relevant<sp/>information<sp/>to<sp/>the<sp/>**controller**<sp/>node,<sp/>through<sp/>the<sp/>use<sp/>of<sp/>topics.<sp/>It<sp/>also<sp/>communicates<sp/>directly<sp/>with<sp/>the<sp/>**move_base**<sp/>node<sp/>if<sp/>the<sp/>user<sp/>requests<sp/>goal<sp/>cancellation,<sp/>to<sp/>ensure<sp/>speedy<sp/>response.<sp/>The<sp/>**controller**<sp/>node<sp/>not<sp/>only<sp/>receives<sp/>input<sp/>from<sp/>the<sp/>**UI**<sp/>node,<sp/>but<sp/>also<sp/>from<sp/>the<sp/>**teleop_twist_keyboard**<sp/>node,<sp/>which<sp/>no<sp/>longer<sp/>publishes<sp/>directly<sp/>to<sp/>the<sp/>**cmd_vel**<sp/>topic,<sp/>but<sp/>rather<sp/>is<sp/>remapped<sp/>to<sp/>publish<sp/>to<sp/>the<sp/>**controller_cmd_vel**<sp/>topic.<sp/>This<sp/>way,<sp/>the<sp/>**controller**<sp/>node<sp/>has<sp/>the<sp/>ability<sp/>to<sp/>block<sp/>commands<sp/>as<sp/>necessary<sp/>(in<sp/>case<sp/>of<sp/>autonomous<sp/>drive)<sp/>or<sp/>to<sp/>filter<sp/>the<sp/>commands<sp/>before<sp/>they<sp/>are<sp/>published<sp/>to<sp/>the<sp/>robot<sp/>(in<sp/>case<sp/>of<sp/>assisted<sp/>drive).</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>**UI**<sp/>receives<sp/>information<sp/>from<sp/>the<sp/>**controller**<sp/>node<sp/>on<sp/>the<sp/>**controller_stateinfo**<sp/>topic.<sp/>This<sp/>way,<sp/>the<sp/>user<sp/>is<sp/>always<sp/>kept<sp/>updated<sp/>on<sp/>the<sp/>robot&apos;s<sp/>state.</highlight></codeline>
+<codeline><highlight class="normal">Both<sp/>nodes<sp/>set<sp/>and<sp/>get<sp/>parameters<sp/>from<sp/>the<sp/>parameter<sp/>server,<sp/>that<sp/>can<sp/>be<sp/>modified<sp/>in<sp/>the<sp/>launch<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Extras</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>**roslaunch**<sp/>file<sp/>is<sp/>set<sp/>by<sp/>default<sp/>to<sp/>print<sp/>to<sp/>the<sp/>terminal.<sp/>The<sp/>program<sp/>is<sp/>capable<sp/>of<sp/>**logging**<sp/>and<sp/>can<sp/>be<sp/>set<sp/>to<sp/>do<sp/>so,<sp/>to<sp/>the<sp/>default<sp/>ROS<sp/>logs,<sp/>by<sp/>modifying<sp/>the<sp/>launch<sp/>file<sp/>accordingly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Node<sp/>structure</highlight></codeline>
+<codeline><highlight class="normal">Image</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Pseudocode</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>controller<sp/>node</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>listen<sp/>for<sp/>UI<sp/>node&apos;s<sp/>commands</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>if<sp/>autonomous<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>receive<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>start<sp/>driving<sp/>action<sp/>with<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>manual<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>redirect<sp/>teleop_twist_keyboard<sp/>node<sp/>to<sp/>cmd_vel<sp/>topic</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>assisted<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>run<sp/>collision<sp/>avoidance<sp/>on<sp/>teleop_twist_keyboard&apos;s<sp/>commands</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>send<sp/>filtered<sp/>commands<sp/>to<sp/>cmd_vel</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>send<sp/>info<sp/>to<sp/>UI<sp/>node</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>user<sp/>interface<sp/>(ui)<sp/>node</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>listen<sp/>for<sp/>input</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>while<sp/>listening<sp/>for<sp/>input</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>key<sp/>pressed<sp/>==<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ask<sp/>user<sp/>for<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>publish<sp/>coordinates<sp/>to<sp/>controller</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>listen<sp/>for<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>listening<sp/>for<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>key<sp/>pressed<sp/>==<sp/>q</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cancel<sp/>goal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>elseif<sp/>key<sp/>pressed<sp/>==<sp/>2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tell<sp/>controller<sp/>to<sp/>go<sp/>into<sp/>manual<sp/>drive<sp/>mode</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>controller<sp/>output</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>elseif<sp/>key<sp/>pressed<sp/>==<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tell<sp/>controller<sp/>to<sp/>go<sp/>into<sp/>assisted<sp/>drive<sp/>mode</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>controller<sp/>output</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>&quot;wrong<sp/>input&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

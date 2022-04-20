@@ -1,0 +1,9 @@
+<launch>
+  <!-- Launch Everything -->
+  <include file="$(find final_assignment)/launch/simulation_gmapping.launch"/>
+  <include file="$(find final_assignment)/launch/move_base.launch"/>
+  <node name="rt1a3_inputasync" pkg="rt1-assignment3"
+    type="rt1a3_inputasync" required="false" output="screen"/>
+  <node name="rt1a3_controller" pkg="rt1-assignment3" output="screen"
+    type="rt1a3_controller" launch-prefix="gnome-terminal -- sh -c"/>
+</launch>

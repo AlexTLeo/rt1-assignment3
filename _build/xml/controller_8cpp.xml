@@ -1,0 +1,681 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="controller_8cpp" kind="file" language="C++">
+    <compoundname>controller.cpp</compoundname>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">actionlib/client/simple_action_client.h</includes>
+    <includes local="no">actionlib/client/terminal_state.h</includes>
+    <includes local="no">actionlib_msgs/GoalID.h</includes>
+    <includes local="no">move_base_msgs/MoveBaseAction.h</includes>
+    <includes local="no">move_base_msgs/MoveBaseGoal.h</includes>
+    <includes local="no">geometry_msgs/Point.h</includes>
+    <includes local="no">geometry_msgs/Twist.h</includes>
+    <includes local="no">std_msgs/String.h</includes>
+    <includes local="no">std_msgs/Bool.h</includes>
+    <includes local="no">std_srvs/Empty.h</includes>
+    <includes local="no">sensor_msgs/LaserScan.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>actionlib/client/terminal_state.h</label>
+      </node>
+      <node id="14">
+        <label>std_srvs/Empty.h</label>
+      </node>
+      <node id="13">
+        <label>std_msgs/Bool.h</label>
+      </node>
+      <node id="10">
+        <label>geometry_msgs/Point.h</label>
+      </node>
+      <node id="9">
+        <label>move_base_msgs/MoveBaseGoal.h</label>
+      </node>
+      <node id="8">
+        <label>move_base_msgs/MoveBaseAction.h</label>
+      </node>
+      <node id="11">
+        <label>geometry_msgs/Twist.h</label>
+      </node>
+      <node id="2">
+        <label>unistd.h</label>
+      </node>
+      <node id="3">
+        <label>sstream</label>
+      </node>
+      <node id="7">
+        <label>actionlib_msgs/GoalID.h</label>
+      </node>
+      <node id="5">
+        <label>actionlib/client/simple_action_client.h</label>
+      </node>
+      <node id="4">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="12">
+        <label>std_msgs/String.h</label>
+      </node>
+      <node id="1">
+        <label>src/controller.cpp</label>
+        <link refid="controller_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>sensor_msgs/LaserScan.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structmin_distances" prot="public">minDistances</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="controller_8cpp_1a54a497960510b4f1e3a0861ce8b2f264" prot="public" static="yes" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pubStateInfo</definition>
+        <argsstring></argsstring>
+        <name>pubStateInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="112" column="23" bodyfile="src/controller.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1a4cd3837b3080c39fe4c9dec12b51d45d" prot="public" static="yes" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pubCmdVel</definition>
+        <argsstring></argsstring>
+        <name>pubCmdVel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="113" column="23" bodyfile="src/controller.cpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1af5aa2a1eafb52f6aafdf3a14ef627ee2" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool isManualDrive</definition>
+        <argsstring></argsstring>
+        <name>isManualDrive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="114" column="13" bodyfile="src/controller.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1ae3391f99a87a8028cc60759ee9c1295f" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool isAssistedDrive</definition>
+        <argsstring></argsstring>
+        <name>isAssistedDrive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="115" column="13" bodyfile="src/controller.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1aa5a2ac6743433bdcc5f27c7198c14fad" prot="public" static="yes" mutable="no">
+        <type>struct <ref refid="structmin_distances" kindref="compound">minDistances</ref></type>
+        <definition>struct minDistances minDistances</definition>
+        <argsstring></argsstring>
+        <name>minDistances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="115" column="13" bodyfile="src/controller.cpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1a70cda465cdbca4003b41330d706e8fa9" prot="public" static="yes" mutable="no">
+        <type>geometry_msgs::Twist</type>
+        <definition>geometry_msgs::Twist velFromTeleop</definition>
+        <argsstring></argsstring>
+        <name>velFromTeleop</name>
+        <briefdescription>
+<para>Velocity sent over from teleop_twist_keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="118" column="29" bodyfile="src/controller.cpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1ac59255cfa090da762403f35562541fe8" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ACTION_TIMEOUT_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>ACTION_TIMEOUT_DEFAULT</name>
+        <initializer>= 30.0</initializer>
+        <briefdescription>
+<para>Default timeout value (in seconds) - overwritten by ros param. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="121" column="14" bodyfile="src/controller.cpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="controller_8cpp_1a1727e065c6c73d57999b646fb5849511" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double BRAKE_THRESHOLD_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>BRAKE_THRESHOLD_DEFAULT</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+<para>Default brake threshold distance - overwritten by ros param. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="123" column="14" bodyfile="src/controller.cpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendInfo</definition>
+        <argsstring>(std::string msg)</argsstring>
+        <name>sendInfo</name>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to publish</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Publishes a msg to the &quot;/controller_stateinfo&quot; topic </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="176" column="6" bodyfile="src/controller.cpp" bodystart="176" bodyend="180" declfile="src/controller.cpp" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1ad28f81807809cde82c0e04c8f814b344" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void autonomousDriveCallback</definition>
+        <argsstring>(const geometry_msgs::Point::ConstPtr &amp;msg)</argsstring>
+        <name>autonomousDriveCallback</name>
+        <param>
+          <type>const geometry_msgs::Point::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Goalpoint coordinates to be reached</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Sends an action goal to the move_base node&apos;s action server which will autonomously guide the robot to specified coordinates </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="182" column="6" bodyfile="src/controller.cpp" bodystart="182" bodyend="221" declfile="src/controller.cpp" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a3ee496a9100d9ee3e8224182591d09ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void userDriveCallback</definition>
+        <argsstring>(const geometry_msgs::Twist::ConstPtr &amp;msg)</argsstring>
+        <name>userDriveCallback</name>
+        <param>
+          <type>const geometry_msgs::Twist::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Incoming teleop_twist_keyboard command</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listens to the &quot;/cmd_vel&quot; topic published by teleop_twist_keyboard (remapped to &quot;/controller_cmd_vel&quot;) and saves the commands in a global variable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="223" column="6" bodyfile="src/controller.cpp" bodystart="223" bodyend="225" declfile="src/controller.cpp" declline="76" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a5cb79eacce073518b178884367ad1951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void toggleManualDrive</definition>
+        <argsstring>(const std_msgs::Bool::ConstPtr &amp;msg)</argsstring>
+        <name>toggleManualDrive</name>
+        <param>
+          <type>const std_msgs::Bool::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean indicating manual drive (true) or not (false)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listens to the &quot;/controller_manual&quot; topic for a boolean, indicating whether or not the drive mode should be manual </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="227" column="6" bodyfile="src/controller.cpp" bodystart="227" bodyend="238" declfile="src/controller.cpp" declline="84" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a98d325c9e067a0a133c6cbf59596b139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void toggleAssistedDrive</definition>
+        <argsstring>(const std_msgs::Bool::ConstPtr &amp;msg)</argsstring>
+        <name>toggleAssistedDrive</name>
+        <param>
+          <type>const std_msgs::Bool::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean indicating assisted drive (true) or not (false) Listens to the &quot;/controller_assisted&quot; topic for a boolean, indicating whether or not the drive should be assisted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="240" column="6" bodyfile="src/controller.cpp" bodystart="240" bodyend="251" declfile="src/controller.cpp" declline="91" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a6008d478c5c0c1ef7156688742008127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void laserScanParser</definition>
+        <argsstring>(const sensor_msgs::LaserScan::ConstPtr &amp;scaninfo)</argsstring>
+        <name>laserScanParser</name>
+        <param>
+          <type>const sensor_msgs::LaserScan::ConstPtr &amp;</type>
+          <declname>scaninfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scaninfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Laser Scanner information</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Gets info from laser scanner on obstacles surrounding the robot and saves it in struct <ref refid="structmin_distances" kindref="compound">minDistances</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="253" column="6" bodyfile="src/controller.cpp" bodystart="253" bodyend="282" declfile="src/controller.cpp" declline="99" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a8af51e421dfd92106d6a417ac954a2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void collisionAvoidance</definition>
+        <argsstring>()</argsstring>
+        <name>collisionAvoidance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check laser scanner and modify current velocity to avoid any collisions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="284" column="6" bodyfile="src/controller.cpp" bodystart="284" bodyend="312" declfile="src/controller.cpp" declline="104" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/controller.cpp" line="125" column="5" bodyfile="src/controller.cpp" bodystart="125" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Main robot controller. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alex Thanaphon Leonardi </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 </para>
+</simplesect>
+<simplesect kind="date"><para>19/04/2022</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rt1a3_action_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of time in seconds before autonomous driving action automatically times out</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<linebreak/>
+</para>
+<para>Subscribes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/user_goalpoints</para>
+</listitem><listitem><para>/controller_cmd_vel</para>
+</listitem><listitem><para>/controller_manual</para>
+</listitem><listitem><para>/controller_assisted</para>
+</listitem><listitem><para>/scan</para>
+</listitem></itemizedlist>
+</para>
+<para>Publishes to: <linebreak/>
+<itemizedlist>
+<listitem><para>/controller_stateinfo</para>
+</listitem><listitem><para>/cmd_vel</para>
+</listitem></itemizedlist>
+</para>
+<para>Description:</para>
+<para>This is the main robot controller node. It queries the rt1a3_inputasync node for any user input and handles it appropriately. If the user selected autonomous drive mode, then the controller will send the goalpoint coordinates to the move_base node via an action. If the user selected manual or assisted drive mode, then the controller will remap all teleop_twist_keyboard messages so that they first pass through the controller itself (for filtering). Then, the messages are forwarded to move_base. The controller is constantly sending information on the robot&apos;s current state back to the rt1a3_ui (user interface) node via the /controller_stateinfo topic. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="40"><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/simple_action_client.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib/client/terminal_state.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;actionlib_msgs/GoalID.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;move_base_msgs/MoveBaseAction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;move_base_msgs/MoveBaseGoal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Point.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;geometry_msgs/Twist.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/String.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/Bool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_srvs/Empty.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sensor_msgs/LaserScan.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(std::string<sp/>msg);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1ad28f81807809cde82c0e04c8f814b344" kindref="member">autonomousDriveCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::Point::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a3ee496a9100d9ee3e8224182591d09ab" kindref="member">userDriveCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::Twist::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a5cb79eacce073518b178884367ad1951" kindref="member">toggleManualDrive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Bool::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a98d325c9e067a0a133c6cbf59596b139" kindref="member">toggleAssistedDrive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Bool::ConstPtr&amp;<sp/>msg);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a6008d478c5c0c1ef7156688742008127" kindref="member">laserScanParser</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::LaserScan::ConstPtr&amp;<sp/>scaninfo);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a8af51e421dfd92106d6a417ac954a2b8" kindref="member">collisionAvoidance</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structmin_distances" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmin_distances" kindref="compound">minDistances</ref><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>left;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>right;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ros::Publisher<sp/>pubStateInfo;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>ros::Publisher<sp/>pubCmdVel;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isManualDrive;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAssistedDrive;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmin_distances" kindref="compound">minDistances</ref><sp/><ref refid="structmin_distances" kindref="compound">minDistances</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="keyword">static</highlight><highlight class="normal"><sp/>geometry_msgs::Twist<sp/>velFromTeleop;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1ac59255cfa090da762403f35562541fe8" kindref="member">ACTION_TIMEOUT_DEFAULT</ref><sp/>=<sp/>30.0;</highlight></codeline>
+<codeline lineno="123"><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a1727e065c6c73d57999b646fb5849511" kindref="member">BRAKE_THRESHOLD_DEFAULT</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;rt1a3_controller&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subGoalPoint;<sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>new<sp/>goal<sp/>point<sp/>coordinates<sp/>from<sp/>ui<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subCmdVelRemapped;<sp/></highlight><highlight class="comment">//<sp/>teleop_twist_keyboard<sp/>remapped<sp/>to<sp/>publish<sp/>to<sp/>new<sp/>topic,<sp/>listen<sp/>to<sp/>it!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subManualDrive;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subAssistedDrive;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>ros::Subscriber<sp/>subScanner;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>timeout<sp/>on<sp/>the<sp/>parameter<sp/>server<sp/>so<sp/>UI<sp/>can<sp/>access<sp/>it<sp/>too</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!nh.hasParam(</highlight><highlight class="stringliteral">&quot;rt1a3_action_timeout&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>nh.setParam(</highlight><highlight class="stringliteral">&quot;/rt1a3_action_timeout&quot;</highlight><highlight class="normal">,<sp/><ref refid="controller_8cpp_1ac59255cfa090da762403f35562541fe8" kindref="member">ACTION_TIMEOUT_DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>brake<sp/>threshold<sp/>on<sp/>the<sp/>parameter<sp/>server<sp/>so<sp/>it<sp/>can<sp/>be<sp/>tweaked<sp/>in<sp/>runtime</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!nh.hasParam(</highlight><highlight class="stringliteral">&quot;rt1a3_brake_threshold&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>nh.setParam(</highlight><highlight class="stringliteral">&quot;/rt1a3_brake_threshold&quot;</highlight><highlight class="normal">,<sp/><ref refid="controller_8cpp_1a1727e065c6c73d57999b646fb5849511" kindref="member">BRAKE_THRESHOLD_DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>isManualDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>isAssistedDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>pubStateInfo<sp/>=<sp/>nh.advertise&lt;std_msgs::String&gt;(</highlight><highlight class="stringliteral">&quot;controller_stateinfo&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>pubCmdVel<sp/>=<sp/>nh.advertise&lt;geometry_msgs::Twist&gt;(</highlight><highlight class="stringliteral">&quot;cmd_vel&quot;</highlight><highlight class="normal">,<sp/>10);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>subGoalPoint<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;user_goalpoints&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="controller_8cpp_1ad28f81807809cde82c0e04c8f814b344" kindref="member">autonomousDriveCallback</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>subCmdVelRemapped<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;controller_cmd_vel&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="controller_8cpp_1a3ee496a9100d9ee3e8224182591d09ab" kindref="member">userDriveCallback</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>subManualDrive<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;controller_manual&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="controller_8cpp_1a5cb79eacce073518b178884367ad1951" kindref="member">toggleManualDrive</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>subAssistedDrive<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;controller_assisted&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="controller_8cpp_1a98d325c9e067a0a133c6cbf59596b139" kindref="member">toggleAssistedDrive</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>subScanner<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;scan&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="controller_8cpp_1a6008d478c5c0c1ef7156688742008127" kindref="member">laserScanParser</ref>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok())<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>manual<sp/>or<sp/>assisted<sp/>drive<sp/>is<sp/>chosen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isManualDrive)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MANUAL<sp/>drive<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>geometry_msgs::Twist<sp/>newVel;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>newVel<sp/>=<sp/>velFromTeleop;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pubCmdVel.publish(newVel);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isAssistedDrive)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>collision<sp/>avoidance!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a8af51e421dfd92106d6a417ac954a2b8" kindref="member">collisionAvoidance</ref>();</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Duration(0.1).sleep();</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(std::string<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>std_msgs::String<sp/>stateInfoMsg;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>stateInfoMsg.data<sp/>=<sp/>msg;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>pubStateInfo.publish(stateInfoMsg);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1ad28f81807809cde82c0e04c8f814b344" kindref="member">autonomousDriveCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::Point::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>move_base_msgs::MoveBaseGoal<sp/>moveBaseGoal;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>actionlib::SimpleActionClient&lt;move_base_msgs::MoveBaseAction&gt;<sp/>moveBaseAC(</highlight><highlight class="stringliteral">&quot;move_base&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>actionTimeout;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>timeout<sp/>in<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nh.getParam(</highlight><highlight class="stringliteral">&quot;/rt1a3_action_timeout&quot;</highlight><highlight class="normal">,<sp/>actionTimeout))<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ROS_INFO(&quot;Action<sp/>timeout<sp/>successfully<sp/>retrieved<sp/>from<sp/>parameter<sp/>server&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>retrieve<sp/>action<sp/>timeout<sp/>from<sp/>parameter<sp/>server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;New<sp/>goal<sp/>point<sp/>received!<sp/>Sending<sp/>action<sp/>to<sp/>the<sp/>move_base<sp/>action<sp/>server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Setting<sp/>fields<sp/>for<sp/>the<sp/>goal<sp/>action</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>moveBaseGoal.target_pose.header.frame_id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;map&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>moveBaseGoal.target_pose.pose.orientation.w<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>moveBaseGoal.target_pose.pose.position.x<sp/>=<sp/>msg-&gt;x;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>moveBaseGoal.target_pose.pose.position.y<sp/>=<sp/>msg-&gt;y;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>action<sp/>server<sp/>to<sp/>start&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>robot<sp/>to<sp/>respond...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>moveBaseAC.waitForServer();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>server<sp/>started,<sp/>sending<sp/>goal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Driving<sp/>towards<sp/>requested<sp/>coordinates...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>moveBaseAC.sendGoal(moveBaseGoal);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>action<sp/>does<sp/>not<sp/>finish<sp/>before<sp/>timeout,<sp/>then<sp/>cancel<sp/>it<sp/>and<sp/>notify<sp/>user</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(moveBaseAC.waitForResult(ros::Duration(actionTimeout)))<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>actionlib::SimpleClientGoalState<sp/>state<sp/>=<sp/>moveBaseAC.getState();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>finished:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>state.toString().c_str());</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Goal<sp/>has<sp/>been<sp/>successfully<sp/>reached.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Action<sp/>timed<sp/>out.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Timeout:<sp/>goal<sp/>has<sp/>been<sp/>automatically<sp/>cancelled.<sp/>(Are<sp/>you<sp/>sure<sp/>the<sp/>requested<sp/>coordinates<sp/>were<sp/>reachable?)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>moveBaseAC.cancelGoal();</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a3ee496a9100d9ee3e8224182591d09ab" kindref="member">userDriveCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::Twist::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>velFromTeleop<sp/>=<sp/>*msg;<sp/></highlight><highlight class="comment">//<sp/>Save<sp/>new<sp/>velocity<sp/>as<sp/>global<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a5cb79eacce073518b178884367ad1951" kindref="member">toggleManualDrive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Bool::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg-&gt;data<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Toggle<sp/>redirect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>isManualDrive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>isAssistedDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Manual<sp/>Drive<sp/>mode<sp/>enabled.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>redirecting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>isManualDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Manual<sp/>Drive<sp/>mode<sp/>disabled.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a98d325c9e067a0a133c6cbf59596b139" kindref="member">toggleAssistedDrive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std_msgs::Bool::ConstPtr&amp;<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg-&gt;data<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Toggle<sp/>redirect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>isAssistedDrive<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>isManualDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Assisted<sp/>Drive<sp/>mode<sp/>enabled.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>redirecting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>isAssistedDrive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Assisted<sp/>Drive<sp/>mode<sp/>disabled.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a6008d478c5c0c1ef7156688742008127" kindref="member">laserScanParser</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::LaserScan::ConstPtr&amp;<sp/>scaninfo)<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NUM_SECTORS<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numElements;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numElementsSector;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>leftDistMin;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>rightDistMin;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>numElements<sp/>=<sp/>scaninfo-&gt;ranges.size();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>numElementsSector<sp/>=<sp/>numElements/NUM_SECTORS;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Temporarily<sp/>take<sp/>an<sp/>element<sp/>from<sp/>each<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/>leftDistMin<sp/>=<sp/>scaninfo-&gt;ranges[0];</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>rightDistMin<sp/>=<sp/>scaninfo-&gt;ranges[numElements<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numElements;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>numElementsSector)<sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>FIRST<sp/>sector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scaninfo-&gt;ranges[i]<sp/>&lt;<sp/>leftDistMin)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leftDistMin<sp/>=<sp/>scaninfo-&gt;ranges[i];</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>THIRD<sp/>sector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(scaninfo-&gt;ranges[i]<sp/>&lt;<sp/>rightDistMin)<sp/>{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rightDistMin<sp/>=<sp/>scaninfo-&gt;ranges[i];</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><ref refid="structmin_distances" kindref="compound">minDistances</ref>.left<sp/>=<sp/>leftDistMin;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><ref refid="structmin_distances" kindref="compound">minDistances</ref>.right<sp/>=<sp/>rightDistMin;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8cpp_1a8af51e421dfd92106d6a417ac954a2b8" kindref="member">collisionAvoidance</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ASSISTED<sp/>drive<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>geometry_msgs::Twist<sp/>newVel;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>brakeThreshold;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/>newVel<sp/>=<sp/>velFromTeleop;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nh.getParam(</highlight><highlight class="stringliteral">&quot;/rt1a3_brake_threshold&quot;</highlight><highlight class="normal">,<sp/>brakeThreshold))<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ROS_INFO(&quot;Brake<sp/>threshold<sp/>successfully<sp/>retrieved<sp/>from<sp/>parameter<sp/>server&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>retrieve<sp/>brake<sp/>threshold<sp/>from<sp/>parameter<sp/>server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Correct<sp/>user<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmin_distances" kindref="compound">minDistances</ref>.left<sp/>&lt;=<sp/>brakeThreshold)<sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>newVel.linear.x<sp/>=<sp/>velFromTeleop.linear.x/2;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>newVel.angular.z<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>the<sp/>other<sp/>way</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Obstacle<sp/>detected!<sp/>Collision<sp/>avoidance<sp/>in<sp/>progress.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmin_distances" kindref="compound">minDistances</ref>.right<sp/>&lt;=<sp/>brakeThreshold)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>newVel.linear.x<sp/>=<sp/>velFromTeleop.linear.x/2;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>newVel.angular.z<sp/>=<sp/>-1;<sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>the<sp/>other<sp/>way</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Obstacle<sp/>detected!<sp/>Collision<sp/>avoidance<sp/>in<sp/>progress.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kindref="member">sendInfo</ref>(</highlight><highlight class="stringliteral">&quot;Listening<sp/>to<sp/>commands.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>pubCmdVel.publish(newVel);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/controller.cpp"/>
+  </compounddef>
+</doxygen>

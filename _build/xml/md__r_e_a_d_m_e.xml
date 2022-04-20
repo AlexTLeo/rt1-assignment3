@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>README</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><bold>Institution:</bold> Università di Genova<linebreak/>
+ <bold>Course:</bold> MSc in Robotics Engineering<linebreak/>
+ <bold>Subject:</bold> Research Track 1<linebreak/>
+ <bold>Author:</bold> <emphasis><bold>Alex Thanaphon Leonardi</bold></emphasis><linebreak/>
+</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md0">
+<title>Assignment 3</title>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Introduction</title>
+<para>This is the third assignment of the &quot;Research Track 1&quot; course, for the Robotics Engineering degree, Università di Genova. The assignment consists in writing two ROS nodes: a controller for a robot, and a UI. The user can choose one of three methods to command the robot (autonomously, manually, or in assisted driving mode). A helper node was also implemented to get input asynchronously, i.e. without blocking the main nodes.</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Running the program</title>
+<sect3 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Installation</title>
+<para>The simulator requires ROS. Clone this repository into your ROS workspace&apos;s src/ folder. <programlisting><codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/ThanaphonLeonardi/rt1-assignment3</highlight></codeline>
+</programlisting></para>
+<para>It also requires the final_assignment package, the slam_gmapping package, and the ROS navigation stack <programlisting><codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/CarmineD8/final_assignment</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://www.github.com/CarmineD8/slam_gmapping</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>ros-noetic-navigation</highlight></codeline>
+</programlisting></para>
+<para>Make sure to switch to the noetic branch on the git repositories! </para>
+</sect3>
+<sect3 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Execution</title>
+<para>Launch the simulation. <programlisting><codeline><highlight class="normal">roslaunch<sp/>final_assignment<sp/>simulation_gmapping.launch</highlight></codeline>
+</programlisting></para>
+<para>And the node that manages the movement <programlisting><codeline><highlight class="normal">roslaunch<sp/>final_assignment<sp/>move_base.launch</highlight></codeline>
+</programlisting></para>
+<para>Finally, run the controller, ui, helper, and teleop_twist_keyboard node <programlisting><codeline><highlight class="normal">roslaunch<sp/>rt1-assignment3<sp/>rt1a3.launch</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt1-assignment3<sp/>rt1a3_teleop.launch</highlight></codeline>
+</programlisting></para>
+</sect3>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Description</title>
+<para>The robot can be controlled according to three modes:<orderedlist>
+<listitem><para>Autonomous Drive: the robot can be given a pair of coordinates, towards which it will autonomously drive. The goal can be cancelled by pressing <bold>q</bold>.</para>
+</listitem><listitem><para>Manual Drive: the robot can be manually controlled by an operator, using the <bold>teleop_twist_keyboard</bold> package. By choosing this option, the robot can be controlled via the terminal on which the rt1a3_teleop launch file was called, using the keys &quot;uiojklm,.&quot;.</para>
+</listitem><listitem><para>Assisted Drive: same as manual drive, except that the robot will now actively avoid all collisions, even superseding user input.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md6">
+<title>Behind The Scenes</title>
+<para>The <bold>UI</bold> node sends relevant information to the <bold>controller</bold> node, through the use of topics. It also communicates directly with the <bold>move_base</bold> node if the user requests goal cancellation, to ensure speedy response. The <bold>controller</bold> node not only receives input from the <bold>UI</bold> node, but also from the <bold>teleop_twist_keyboard</bold> node, which no longer publishes directly to the <bold>cmd_vel</bold> topic, but rather is remapped to publish to the <bold>controller_cmd_vel</bold> topic. This way, the <bold>controller</bold> node has the ability to block commands as necessary (in case of autonomous drive) or to filter the commands before they are published to the robot (in case of assisted drive). The <bold>UI</bold> receives information from the <bold>controller</bold> node on the <bold>controller_stateinfo</bold> topic. This way, the user is always kept updated on the robot&apos;s state. Both nodes set and get parameters from the parameter server, that can be modified in the launch file.</para>
+<sect3 id="md__r_e_a_d_m_e_1autotoc_md7">
+<title>Extras</title>
+<para>The <bold>roslaunch</bold> file is set by default to print to the terminal. The program is capable of <bold>logging</bold> and can be set to do so, to the default ROS logs, by modifying the launch file accordingly.</para>
+</sect3>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md8">
+<title>Node structure</title>
+<para>Image</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md9">
+<title>Pseudocode</title>
+<sect3 id="md__r_e_a_d_m_e_1autotoc_md10">
+<title>controller node</title>
+<para><programlisting><codeline><highlight class="normal">listen<sp/>for<sp/>UI<sp/>node&apos;s<sp/>commands</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>autonomous<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>receive<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>start<sp/>driving<sp/>action<sp/>with<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">elseif<sp/>manual<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>redirect<sp/>teleop_twist_keyboard<sp/>node<sp/>to<sp/>cmd_vel<sp/>topic</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">elseif<sp/>assisted<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>run<sp/>collision<sp/>avoidance<sp/>on<sp/>teleop_twist_keyboard&apos;s<sp/>commands</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>send<sp/>filtered<sp/>commands<sp/>to<sp/>cmd_vel</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">send<sp/>info<sp/>to<sp/>UI<sp/>node</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="md__r_e_a_d_m_e_1autotoc_md11">
+<title>user interface (ui) node</title>
+<para><programlisting><codeline><highlight class="normal">listen<sp/>for<sp/>input</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">while<sp/>listening<sp/>for<sp/>input</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>if<sp/>key<sp/>pressed<sp/>==<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ask<sp/>user<sp/>for<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>publish<sp/>coordinates<sp/>to<sp/>controller</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>listen<sp/>for<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>listening<sp/>for<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>key<sp/>pressed<sp/>==<sp/>q</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cancel<sp/>goal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>key<sp/>pressed<sp/>==<sp/>2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tell<sp/>controller<sp/>to<sp/>go<sp/>into<sp/>manual<sp/>drive<sp/>mode</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>controller<sp/>output</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>key<sp/>pressed<sp/>==<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>tell<sp/>controller<sp/>to<sp/>go<sp/>into<sp/>assisted<sp/>drive<sp/>mode</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>controller<sp/>output</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>print<sp/>&quot;wrong<sp/>input&quot;</highlight></codeline>
+</programlisting> </para>
+</sect3>
+</sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

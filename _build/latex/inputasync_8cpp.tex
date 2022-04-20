@@ -1,0 +1,78 @@
+\hypertarget{inputasync_8cpp}{}\doxysection{src/inputasync.cpp File Reference}
+\label{inputasync_8cpp}\index{src/inputasync.cpp@{src/inputasync.cpp}}
+
+
+Capture user inputs and publish them.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+String.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Empty.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rt1-\/assignment3/utils.\+h\char`\"{}}\newline
+Include dependency graph for inputasync.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inputasync_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{inputasync_8cpp_afc2bbae7691ff2f64507d4c90964696d}{get\+Input}} (const std\+\_\+msgs\+::\+Empty\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Detects next keypress. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{inputasync_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{inputasync_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Capture user inputs and publish them. 
+
+\begin{DoxyAuthor}{Author}
+Alex Thanaphon Leonardi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/04/2022
+\end{DoxyDate}
+~\newline
+
+
+Subscribes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /ui\+\_\+inputrequest
+\end{DoxyItemize}
+
+Publishes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /ui\+\_\+inputasync
+\end{DoxyItemize}
+
+Description \+:
+
+This node asynchonrously captures user inputs and publishes them. Having an extra node that can handle inputs is very important, because inputs are generally blocking and it is not always feasible to interrupt everything until the user inputs something. To request user input, another node must simply publish any message to the \char`\"{}/ui\+\_\+inputrequest\char`\"{} topic, and the next user input will be published to the \char`\"{}/ui\+\_\+inputasync\char`\"{} topic. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inputasync_8cpp_afc2bbae7691ff2f64507d4c90964696d}\label{inputasync_8cpp_afc2bbae7691ff2f64507d4c90964696d}} 
+\index{inputasync.cpp@{inputasync.cpp}!getInput@{getInput}}
+\index{getInput@{getInput}!inputasync.cpp@{inputasync.cpp}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily void get\+Input (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+Empty\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Detects next keypress. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & does nothing for this function\\
+\hline
+\end{DoxyParams}
+Detects the next keypress (in whichever console this node is running in) and publishes it to \char`\"{}/ui\+\_\+inputasync\char`\"{}. 

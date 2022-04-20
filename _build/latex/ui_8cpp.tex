@@ -1,0 +1,135 @@
+\hypertarget{ui_8cpp}{}\doxysection{src/ui.cpp File Reference}
+\label{ui_8cpp}\index{src/ui.cpp@{src/ui.cpp}}
+
+
+Interface between user and robot controller.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$move\+\_\+base\+\_\+msgs/\+Move\+Base\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$move\+\_\+base\+\_\+msgs/\+Move\+Base\+Goal.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Empty.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Bool.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+String.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Point.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib\+\_\+msgs/\+Goal\+I\+D.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rt1-\/assignment3/utils.\+h\char`\"{}}\newline
+Include dependency graph for ui.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ui_8cpp_a86d0de416ac3f84fbea7eafd2325946c}{get\+User\+Choice}} ()
+\item 
+void \mbox{\hyperlink{ui_8cpp_a07dfbafabc14304689060ea076fc70b6}{print\+Controller\+Info}} (const std\+\_\+msgs\+::\+String\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{ui_8cpp_a0a525d04046e5faf439d0f2efe2e1a92}{timeout\+Timer\+Callback}} (const ros\+::\+Timer\+Event \&event)
+\item 
+void \mbox{\hyperlink{ui_8cpp_a094fd0b21b31b2f6fc33b3e5d6ccb880}{get\+Input\+Async}} (const std\+\_\+msgs\+::\+String\+::\+Const\+Ptr \&msg)
+\item 
+\mbox{\Hypertarget{ui_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{ui_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ui_8cpp_a1f81e5980e7c3010fd96afd10c7b5dc3}\label{ui_8cpp_a1f81e5980e7c3010fd96afd10c7b5dc3}} 
+const int \mbox{\hyperlink{ui_8cpp_a1f81e5980e7c3010fd96afd10c7b5dc3}{T\+E\+X\+T\+\_\+\+D\+E\+L\+AY}} = 25000
+\begin{DoxyCompactList}\small\item\em Used for \mbox{\hyperlink{utils_8h_source}{utils.\+h}}/display\+Text(), delay between each printed character (in microseconds) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ui_8cpp_a5ca7b3213d58c7b843f49232a6a3b070}\label{ui_8cpp_a5ca7b3213d58c7b843f49232a6a3b070}} 
+bool {\bfseries is\+Complete}
+\item 
+\mbox{\Hypertarget{ui_8cpp_afedb34919f84272937df7151f223895e}\label{ui_8cpp_afedb34919f84272937df7151f223895e}} 
+bool {\bfseries is\+Autonomous}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface between user and robot controller. 
+
+\begin{DoxyAuthor}{Author}
+Alex Thanaphon Leonardi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/04/2022
+\end{DoxyDate}
+~\newline
+
+
+Subscribes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /controller\+\_\+stateinfo
+\item /ui\+\_\+inputasync
+\end{DoxyItemize}
+
+Publishes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /user\+\_\+goalpoints
+\item /move\+\_\+base/cancel
+\item /controller\+\_\+manual
+\item /controller\+\_\+assisted
+\item /ui\+\_\+inputrequest
+\end{DoxyItemize}
+
+Description \+:
+
+This node acts as the interface between the user and the robot. It communicates with the controller node to control the robot in 3 ways\+: autonomous driving, manual driving or assisted driving. To ensure the program does not block while waiting on certain types of input, this node works with the rt1a3\+\_\+inputasync node. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ui_8cpp_a094fd0b21b31b2f6fc33b3e5d6ccb880}\label{ui_8cpp_a094fd0b21b31b2f6fc33b3e5d6ccb880}} 
+\index{ui.cpp@{ui.cpp}!getInputAsync@{getInputAsync}}
+\index{getInputAsync@{getInputAsync}!ui.cpp@{ui.cpp}}
+\doxysubsubsection{\texorpdfstring{getInputAsync()}{getInputAsync()}}
+{\footnotesize\ttfamily void get\+Input\+Async (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+String\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input received\\
+\hline
+\end{DoxyParams}
+Gets input asynchronously through node \char`\"{}rt1a3\+\_\+inputasync\char`\"{} \mbox{\Hypertarget{ui_8cpp_a86d0de416ac3f84fbea7eafd2325946c}\label{ui_8cpp_a86d0de416ac3f84fbea7eafd2325946c}} 
+\index{ui.cpp@{ui.cpp}!getUserChoice@{getUserChoice}}
+\index{getUserChoice@{getUserChoice}!ui.cpp@{ui.cpp}}
+\doxysubsubsection{\texorpdfstring{getUserChoice()}{getUserChoice()}}
+{\footnotesize\ttfamily int get\+User\+Choice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+1 (autonomous), 2 (manual) or 3 (assisted)
+\end{DoxyReturn}
+Queries user for their choice between autonomous, manual or assisted driving \mbox{\Hypertarget{ui_8cpp_a07dfbafabc14304689060ea076fc70b6}\label{ui_8cpp_a07dfbafabc14304689060ea076fc70b6}} 
+\index{ui.cpp@{ui.cpp}!printControllerInfo@{printControllerInfo}}
+\index{printControllerInfo@{printControllerInfo}!ui.cpp@{ui.cpp}}
+\doxysubsubsection{\texorpdfstring{printControllerInfo()}{printControllerInfo()}}
+{\footnotesize\ttfamily void print\+Controller\+Info (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+String\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message to be printed\\
+\hline
+\end{DoxyParams}
+Prints information about the controller state \mbox{\Hypertarget{ui_8cpp_a0a525d04046e5faf439d0f2efe2e1a92}\label{ui_8cpp_a0a525d04046e5faf439d0f2efe2e1a92}} 
+\index{ui.cpp@{ui.cpp}!timeoutTimerCallback@{timeoutTimerCallback}}
+\index{timeoutTimerCallback@{timeoutTimerCallback}!ui.cpp@{ui.cpp}}
+\doxysubsubsection{\texorpdfstring{timeoutTimerCallback()}{timeoutTimerCallback()}}
+{\footnotesize\ttfamily void timeout\+Timer\+Callback (\begin{DoxyParamCaption}\item[{const ros\+::\+Timer\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Timeout event\\
+\hline
+\end{DoxyParams}
+Globally flag that the robot has timed out 

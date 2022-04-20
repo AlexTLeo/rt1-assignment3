@@ -1,0 +1,96 @@
+{\bfseries{Institution\+:}} Università di Genova~\newline
+ {\bfseries{Course\+:}} M\+Sc in Robotics Engineering~\newline
+ {\bfseries{Subject\+:}} Research Track 1~\newline
+ {\bfseries{Author\+:}} {\itshape {\bfseries{Alex Thanaphon Leonardi}}}~\newline
+\hypertarget{md__r_e_a_d_m_e_autotoc_md0}{}\doxysection{Assignment 3}\label{md__r_e_a_d_m_e_autotoc_md0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{Introduction}\label{md__r_e_a_d_m_e_autotoc_md1}
+This is the third assignment of the \char`\"{}\+Research Track 1\char`\"{} course, for the Robotics Engineering degree, Università di Genova. The assignment consists in writing two R\+OS nodes\+: a controller for a robot, and a UI. The user can choose one of three methods to command the robot (autonomously, manually, or in assisted driving mode). A helper node was also implemented to get input asynchronously, i.\+e. without blocking the main nodes.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{Running the program}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsubsection{Installation}\label{md__r_e_a_d_m_e_autotoc_md3}
+The simulator requires R\+OS. Clone this repository into your R\+OS workspace\textquotesingle{}s src/ folder. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://www.github.com/ThanaphonLeonardi/rt1-\/assignment3}
+\end{DoxyCode}
+
+
+It also requires the final\+\_\+assignment package, the slam\+\_\+gmapping package, and the R\+OS navigation stack 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://www.github.com/CarmineD8/final\_assignment}
+\DoxyCodeLine{git clone https://www.github.com/CarmineD8/slam\_gmapping}
+\DoxyCodeLine{sudo apt-\/get install ros-\/noetic-\/navigation}
+\end{DoxyCode}
+
+
+Make sure to switch to the noetic branch on the git repositories! \hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsection{Execution}\label{md__r_e_a_d_m_e_autotoc_md4}
+Launch the simulation. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch final\_assignment simulation\_gmapping.launch}
+\end{DoxyCode}
+
+
+And the node that manages the movement 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch final\_assignment move\_base.launch}
+\end{DoxyCode}
+
+
+Finally, run the controller, ui, helper, and teleop\+\_\+twist\+\_\+keyboard node 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch rt1-\/assignment3 rt1a3.launch}
+\DoxyCodeLine{roslaunch rt1-\/assignment3 rt1a3\_teleop.launch}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Description}\label{md__r_e_a_d_m_e_autotoc_md5}
+The robot can be controlled according to three modes\+:
+\begin{DoxyEnumerate}
+\item Autonomous Drive\+: the robot can be given a pair of coordinates, towards which it will autonomously drive. The goal can be cancelled by pressing {\bfseries{q}}.
+\item Manual Drive\+: the robot can be manually controlled by an operator, using the {\bfseries{teleop\+\_\+twist\+\_\+keyboard}} package. By choosing this option, the robot can be controlled via the terminal on which the rt1a3\+\_\+teleop launch file was called, using the keys \char`\"{}uiojklm,.\char`\"{}.
+\item Assisted Drive\+: same as manual drive, except that the robot will now actively avoid all collisions, even superseding user input.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Behind The Scenes}\label{md__r_e_a_d_m_e_autotoc_md6}
+The {\bfseries{UI}} node sends relevant information to the {\bfseries{controller}} node, through the use of topics. It also communicates directly with the {\bfseries{move\+\_\+base}} node if the user requests goal cancellation, to ensure speedy response. The {\bfseries{controller}} node not only receives input from the {\bfseries{UI}} node, but also from the {\bfseries{teleop\+\_\+twist\+\_\+keyboard}} node, which no longer publishes directly to the {\bfseries{cmd\+\_\+vel}} topic, but rather is remapped to publish to the {\bfseries{controller\+\_\+cmd\+\_\+vel}} topic. This way, the {\bfseries{controller}} node has the ability to block commands as necessary (in case of autonomous drive) or to filter the commands before they are published to the robot (in case of assisted drive). The {\bfseries{UI}} receives information from the {\bfseries{controller}} node on the {\bfseries{controller\+\_\+stateinfo}} topic. This way, the user is always kept updated on the robot\textquotesingle{}s state. Both nodes set and get parameters from the parameter server, that can be modified in the launch file.\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{Extras}\label{md__r_e_a_d_m_e_autotoc_md7}
+The {\bfseries{roslaunch}} file is set by default to print to the terminal. The program is capable of {\bfseries{logging}} and can be set to do so, to the default R\+OS logs, by modifying the launch file accordingly.\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Node structure}\label{md__r_e_a_d_m_e_autotoc_md8}
+Image\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{Pseudocode}\label{md__r_e_a_d_m_e_autotoc_md9}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsection{controller node}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{listen for UI node's commands}
+\DoxyCodeLine{}
+\DoxyCodeLine{if autonomous drive}
+\DoxyCodeLine{  receive coordinates}
+\DoxyCodeLine{  start driving action with coordinates}
+\DoxyCodeLine{}
+\DoxyCodeLine{elseif manual drive}
+\DoxyCodeLine{  redirect teleop\_twist\_keyboard node to cmd\_vel topic}
+\DoxyCodeLine{}
+\DoxyCodeLine{elseif assisted drive}
+\DoxyCodeLine{  run collision avoidance on teleop\_twist\_keyboard's commands}
+\DoxyCodeLine{  send filtered commands to cmd\_vel}
+\DoxyCodeLine{}
+\DoxyCodeLine{send info to UI node}
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsubsection{user interface (ui) node}\label{md__r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{listen for input}
+\DoxyCodeLine{}
+\DoxyCodeLine{while listening for input}
+\DoxyCodeLine{}
+\DoxyCodeLine{  if key pressed == 1}
+\DoxyCodeLine{    ask user for coordinates}
+\DoxyCodeLine{    publish coordinates to controller}
+\DoxyCodeLine{    listen for input}
+\DoxyCodeLine{    while listening for input}
+\DoxyCodeLine{      if key pressed == q}
+\DoxyCodeLine{        cancel goal}
+\DoxyCodeLine{        exit}
+\DoxyCodeLine{}
+\DoxyCodeLine{  elseif key pressed == 2}
+\DoxyCodeLine{    tell controller to go into manual drive mode}
+\DoxyCodeLine{    print controller output}
+\DoxyCodeLine{}
+\DoxyCodeLine{  elseif key pressed == 3}
+\DoxyCodeLine{    tell controller to go into assisted drive mode}
+\DoxyCodeLine{    print controller output}
+\DoxyCodeLine{}
+\DoxyCodeLine{  else}
+\DoxyCodeLine{    print "wrong input"}
+\end{DoxyCode}
+ 

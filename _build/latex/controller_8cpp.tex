@@ -1,0 +1,179 @@
+\hypertarget{controller_8cpp}{}\doxysection{src/controller.cpp File Reference}
+\label{controller_8cpp}\index{src/controller.cpp@{src/controller.cpp}}
+
+
+Main robot controller.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib\+\_\+msgs/\+Goal\+I\+D.\+h$>$}\newline
+{\ttfamily \#include $<$move\+\_\+base\+\_\+msgs/\+Move\+Base\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$move\+\_\+base\+\_\+msgs/\+Move\+Base\+Goal.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Point.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Twist.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+String.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Bool.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+srvs/\+Empty.\+h$>$}\newline
+{\ttfamily \#include $<$sensor\+\_\+msgs/\+Laser\+Scan.\+h$>$}\newline
+Include dependency graph for controller.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmin_distances}{min\+Distances}}
+\begin{DoxyCompactList}\small\item\em Distances of obstacles closest to the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{controller_8cpp_a3717562052ce9010b6e517e6d338b227}{send\+Info}} (std\+::string msg)
+\item 
+void \mbox{\hyperlink{controller_8cpp_ad28f81807809cde82c0e04c8f814b344}{autonomous\+Drive\+Callback}} (const geometry\+\_\+msgs\+::\+Point\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{controller_8cpp_a3ee496a9100d9ee3e8224182591d09ab}{user\+Drive\+Callback}} (const geometry\+\_\+msgs\+::\+Twist\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{controller_8cpp_a5cb79eacce073518b178884367ad1951}{toggle\+Manual\+Drive}} (const std\+\_\+msgs\+::\+Bool\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{controller_8cpp_a98d325c9e067a0a133c6cbf59596b139}{toggle\+Assisted\+Drive}} (const std\+\_\+msgs\+::\+Bool\+::\+Const\+Ptr \&msg)
+\item 
+void \mbox{\hyperlink{controller_8cpp_a6008d478c5c0c1ef7156688742008127}{laser\+Scan\+Parser}} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&scaninfo)
+\item 
+void \mbox{\hyperlink{controller_8cpp_a8af51e421dfd92106d6a417ac954a2b8}{collision\+Avoidance}} ()
+\item 
+\mbox{\Hypertarget{controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{controller_8cpp_ac59255cfa090da762403f35562541fe8}\label{controller_8cpp_ac59255cfa090da762403f35562541fe8}} 
+const double \mbox{\hyperlink{controller_8cpp_ac59255cfa090da762403f35562541fe8}{A\+C\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+D\+E\+F\+A\+U\+LT}} = 30.\+0
+\begin{DoxyCompactList}\small\item\em Default timeout value (in seconds) -\/ overwritten by ros param. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{controller_8cpp_a1727e065c6c73d57999b646fb5849511}\label{controller_8cpp_a1727e065c6c73d57999b646fb5849511}} 
+const double \mbox{\hyperlink{controller_8cpp_a1727e065c6c73d57999b646fb5849511}{B\+R\+A\+K\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+D\+E\+F\+A\+U\+LT}} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Default brake threshold distance -\/ overwritten by ros param. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main robot controller. 
+
+\begin{DoxyAuthor}{Author}
+Alex Thanaphon Leonardi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/04/2022
+\end{DoxyDate}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rt1a3\+\_\+action\+\_\+timeout} & Length of time in seconds before autonomous driving action automatically times out\\
+\hline
+\end{DoxyParams}
+~\newline
+
+
+Subscribes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /user\+\_\+goalpoints
+\item /controller\+\_\+cmd\+\_\+vel
+\item /controller\+\_\+manual
+\item /controller\+\_\+assisted
+\item /scan
+\end{DoxyItemize}
+
+Publishes to\+: ~\newline
+
+\begin{DoxyItemize}
+\item /controller\+\_\+stateinfo
+\item /cmd\+\_\+vel
+\end{DoxyItemize}
+
+Description\+:
+
+This is the main robot controller node. It queries the rt1a3\+\_\+inputasync node for any user input and handles it appropriately. If the user selected autonomous drive mode, then the controller will send the goalpoint coordinates to the move\+\_\+base node via an action. If the user selected manual or assisted drive mode, then the controller will remap all teleop\+\_\+twist\+\_\+keyboard messages so that they first pass through the controller itself (for filtering). Then, the messages are forwarded to move\+\_\+base. The controller is constantly sending information on the robot\textquotesingle{}s current state back to the rt1a3\+\_\+ui (user interface) node via the /controller\+\_\+stateinfo topic. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{controller_8cpp_ad28f81807809cde82c0e04c8f814b344}\label{controller_8cpp_ad28f81807809cde82c0e04c8f814b344}} 
+\index{controller.cpp@{controller.cpp}!autonomousDriveCallback@{autonomousDriveCallback}}
+\index{autonomousDriveCallback@{autonomousDriveCallback}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{autonomousDriveCallback()}{autonomousDriveCallback()}}
+{\footnotesize\ttfamily void autonomous\+Drive\+Callback (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Point\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Goalpoint coordinates to be reached\\
+\hline
+\end{DoxyParams}
+Sends an action goal to the move\+\_\+base node\textquotesingle{}s action server which will autonomously guide the robot to specified coordinates \mbox{\Hypertarget{controller_8cpp_a8af51e421dfd92106d6a417ac954a2b8}\label{controller_8cpp_a8af51e421dfd92106d6a417ac954a2b8}} 
+\index{controller.cpp@{controller.cpp}!collisionAvoidance@{collisionAvoidance}}
+\index{collisionAvoidance@{collisionAvoidance}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{collisionAvoidance()}{collisionAvoidance()}}
+{\footnotesize\ttfamily void collision\+Avoidance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check laser scanner and modify current velocity to avoid any collisions \mbox{\Hypertarget{controller_8cpp_a6008d478c5c0c1ef7156688742008127}\label{controller_8cpp_a6008d478c5c0c1ef7156688742008127}} 
+\index{controller.cpp@{controller.cpp}!laserScanParser@{laserScanParser}}
+\index{laserScanParser@{laserScanParser}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{laserScanParser()}{laserScanParser()}}
+{\footnotesize\ttfamily void laser\+Scan\+Parser (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{scaninfo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaninfo} & Laser Scanner information\\
+\hline
+\end{DoxyParams}
+Gets info from laser scanner on obstacles surrounding the robot and saves it in struct \mbox{\hyperlink{structmin_distances}{min\+Distances}} \mbox{\Hypertarget{controller_8cpp_a3717562052ce9010b6e517e6d338b227}\label{controller_8cpp_a3717562052ce9010b6e517e6d338b227}} 
+\index{controller.cpp@{controller.cpp}!sendInfo@{sendInfo}}
+\index{sendInfo@{sendInfo}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{sendInfo()}{sendInfo()}}
+{\footnotesize\ttfamily void send\+Info (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message to publish\\
+\hline
+\end{DoxyParams}
+Publishes a msg to the \char`\"{}/controller\+\_\+stateinfo\char`\"{} topic \mbox{\Hypertarget{controller_8cpp_a98d325c9e067a0a133c6cbf59596b139}\label{controller_8cpp_a98d325c9e067a0a133c6cbf59596b139}} 
+\index{controller.cpp@{controller.cpp}!toggleAssistedDrive@{toggleAssistedDrive}}
+\index{toggleAssistedDrive@{toggleAssistedDrive}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{toggleAssistedDrive()}{toggleAssistedDrive()}}
+{\footnotesize\ttfamily void toggle\+Assisted\+Drive (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+Bool\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Boolean indicating assisted drive (true) or not (false) Listens to the \char`\"{}/controller\+\_\+assisted\char`\"{} topic for a boolean, indicating whether or not the drive should be assisted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8cpp_a5cb79eacce073518b178884367ad1951}\label{controller_8cpp_a5cb79eacce073518b178884367ad1951}} 
+\index{controller.cpp@{controller.cpp}!toggleManualDrive@{toggleManualDrive}}
+\index{toggleManualDrive@{toggleManualDrive}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{toggleManualDrive()}{toggleManualDrive()}}
+{\footnotesize\ttfamily void toggle\+Manual\+Drive (\begin{DoxyParamCaption}\item[{const std\+\_\+msgs\+::\+Bool\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Boolean indicating manual drive (true) or not (false)\\
+\hline
+\end{DoxyParams}
+Listens to the \char`\"{}/controller\+\_\+manual\char`\"{} topic for a boolean, indicating whether or not the drive mode should be manual \mbox{\Hypertarget{controller_8cpp_a3ee496a9100d9ee3e8224182591d09ab}\label{controller_8cpp_a3ee496a9100d9ee3e8224182591d09ab}} 
+\index{controller.cpp@{controller.cpp}!userDriveCallback@{userDriveCallback}}
+\index{userDriveCallback@{userDriveCallback}!controller.cpp@{controller.cpp}}
+\doxysubsubsection{\texorpdfstring{userDriveCallback()}{userDriveCallback()}}
+{\footnotesize\ttfamily void user\+Drive\+Callback (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::\+Twist\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Incoming teleop\+\_\+twist\+\_\+keyboard command\\
+\hline
+\end{DoxyParams}
+Listens to the \char`\"{}/cmd\+\_\+vel\char`\"{} topic published by teleop\+\_\+twist\+\_\+keyboard (remapped to \char`\"{}/controller\+\_\+cmd\+\_\+vel\char`\"{}) and saves the commands in a global variable 

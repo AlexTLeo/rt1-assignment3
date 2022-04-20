@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="structmin_distances" kind="struct"><name>minDistances</name>
+    <member refid="structmin_distances_1a6566a69922df00f112f9474102201244" kind="variable"><name>left</name></member>
+    <member refid="structmin_distances_1a321e8ae1449b806b8a8f63eadb99156d" kind="variable"><name>right</name></member>
+  </compound>
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+    <member refid="conf_8py_1a332f430461432dc465213f884a1e4967" kind="variable"><name>shell</name></member>
+    <member refid="conf_8py_1a45653c983098153b78e33600e39230eb" kind="variable"><name>project</name></member>
+    <member refid="conf_8py_1a33fa97cf51dcb25970fbf53f10159589" kind="variable"><name>copyright</name></member>
+    <member refid="conf_8py_1a637c239d256432248aa8d9f3ab0b8c52" kind="variable"><name>author</name></member>
+    <member refid="conf_8py_1a325dc746d8bf05c54d26351c35a21d90" kind="variable"><name>release</name></member>
+    <member refid="conf_8py_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
+    <member refid="conf_8py_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
+    <member refid="conf_8py_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="conf_8py_1a3117edf4443d9b8c70a9f0f44294ba79" kind="variable"><name>highlight_language</name></member>
+    <member refid="conf_8py_1a10af2a769eb3bd3322e874f677e435b1" kind="variable"><name>source_suffix</name></member>
+    <member refid="conf_8py_1a6fcd7e5236f355b1e1a55f9d95988810" kind="variable"><name>master_doc</name></member>
+    <member refid="conf_8py_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" kind="variable"><name>html_theme</name></member>
+    <member refid="conf_8py_1af4fb5d8851ccaade135c2668dd3ced41" kind="variable"><name>html_static_path</name></member>
+    <member refid="conf_8py_1a8375f4f963de3ac8026eaa9beced9564" kind="variable"><name>intersphinx_mapping</name></member>
+    <member refid="conf_8py_1a8fe7f0d85f975f4ecba5cb6066959a09" kind="variable"><name>todo_include_todos</name></member>
+    <member refid="conf_8py_1acb47d2c0c2904fa7d36b63142533f383" kind="variable"><name>breathe_projects</name></member>
+    <member refid="conf_8py_1a6eba2d2c7ae923054b1c49e686ec89b9" kind="variable"><name>breathe_default_project</name></member>
+    <member refid="conf_8py_1a54585428ce84441199d9dfd7087e2243" kind="variable"><name>breathe_default_members</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="utils_8h" kind="file"><name>utils.h</name>
+    <member refid="utils_8h_1a22d7c3e857afba4903a76181f91ea9fb" kind="function"><name>clearInputBuffer</name></member>
+    <member refid="utils_8h_1a46ff89009e317faa9748627b96c755be" kind="function"><name>detectKeyPress</name></member>
+    <member refid="utils_8h_1a7bc7ab37b614b7a2a53c8dad1373b3b7" kind="function"><name>terminalColor</name></member>
+    <member refid="utils_8h_1aad531f6562212b82c481588c13bfa284" kind="function"><name>clearTerminal</name></member>
+    <member refid="utils_8h_1a2e9f1bec060b2f2e249b230116766fb0" kind="function"><name>displayText</name></member>
+    <member refid="utils_8h_1a80a898149f46f14bee685208f51d3b06" kind="function"><name>isStringNumeric</name></member>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="controller_8cpp" kind="file"><name>controller.cpp</name>
+    <member refid="controller_8cpp_1a54a497960510b4f1e3a0861ce8b2f264" kind="variable"><name>pubStateInfo</name></member>
+    <member refid="controller_8cpp_1a4cd3837b3080c39fe4c9dec12b51d45d" kind="variable"><name>pubCmdVel</name></member>
+    <member refid="controller_8cpp_1af5aa2a1eafb52f6aafdf3a14ef627ee2" kind="variable"><name>isManualDrive</name></member>
+    <member refid="controller_8cpp_1ae3391f99a87a8028cc60759ee9c1295f" kind="variable"><name>isAssistedDrive</name></member>
+    <member refid="controller_8cpp_1aa5a2ac6743433bdcc5f27c7198c14fad" kind="variable"><name>minDistances</name></member>
+    <member refid="controller_8cpp_1a70cda465cdbca4003b41330d706e8fa9" kind="variable"><name>velFromTeleop</name></member>
+    <member refid="controller_8cpp_1ac59255cfa090da762403f35562541fe8" kind="variable"><name>ACTION_TIMEOUT_DEFAULT</name></member>
+    <member refid="controller_8cpp_1a1727e065c6c73d57999b646fb5849511" kind="variable"><name>BRAKE_THRESHOLD_DEFAULT</name></member>
+    <member refid="controller_8cpp_1a3717562052ce9010b6e517e6d338b227" kind="function"><name>sendInfo</name></member>
+    <member refid="controller_8cpp_1ad28f81807809cde82c0e04c8f814b344" kind="function"><name>autonomousDriveCallback</name></member>
+    <member refid="controller_8cpp_1a3ee496a9100d9ee3e8224182591d09ab" kind="function"><name>userDriveCallback</name></member>
+    <member refid="controller_8cpp_1a5cb79eacce073518b178884367ad1951" kind="function"><name>toggleManualDrive</name></member>
+    <member refid="controller_8cpp_1a98d325c9e067a0a133c6cbf59596b139" kind="function"><name>toggleAssistedDrive</name></member>
+    <member refid="controller_8cpp_1a6008d478c5c0c1ef7156688742008127" kind="function"><name>laserScanParser</name></member>
+    <member refid="controller_8cpp_1a8af51e421dfd92106d6a417ac954a2b8" kind="function"><name>collisionAvoidance</name></member>
+    <member refid="controller_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="inputasync_8cpp" kind="file"><name>inputasync.cpp</name>
+    <member refid="inputasync_8cpp_1a83132a58218fc1513e1bdf0794dd6bb8" kind="variable"><name>pubUI</name></member>
+    <member refid="inputasync_8cpp_1afc2bbae7691ff2f64507d4c90964696d" kind="function"><name>getInput</name></member>
+    <member refid="inputasync_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="ui_8cpp" kind="file"><name>ui.cpp</name>
+    <member refid="ui_8cpp_1a1f81e5980e7c3010fd96afd10c7b5dc3" kind="variable"><name>TEXT_DELAY</name></member>
+    <member refid="ui_8cpp_1a5ca7b3213d58c7b843f49232a6a3b070" kind="variable"><name>isComplete</name></member>
+    <member refid="ui_8cpp_1afedb34919f84272937df7151f223895e" kind="variable"><name>isAutonomous</name></member>
+    <member refid="ui_8cpp_1a0b851c01986ab8e5f1d27fdabb219c6d" kind="variable"><name>pubGoalPointCancel</name></member>
+    <member refid="ui_8cpp_1a86d0de416ac3f84fbea7eafd2325946c" kind="function"><name>getUserChoice</name></member>
+    <member refid="ui_8cpp_1a07dfbafabc14304689060ea076fc70b6" kind="function"><name>printControllerInfo</name></member>
+    <member refid="ui_8cpp_1a0a525d04046e5faf439d0f2efe2e1a92" kind="function"><name>timeoutTimerCallback</name></member>
+    <member refid="ui_8cpp_1a094fd0b21b31b2f6fc33b3e5d6ccb880" kind="function"><name>getInputAsync</name></member>
+    <member refid="ui_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_9e62e375869cade4327cfbb9d7a61f1e" kind="dir"><name>include/rt1-assignment3</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>
