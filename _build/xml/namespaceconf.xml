@@ -174,14 +174,14 @@
         <definition>string conf.html_theme</definition>
         <argsstring></argsstring>
         <name>html_theme</name>
-        <initializer>=  &apos;sphinx_book_theme&apos;</initializer>
+        <initializer>=  &apos;sphinx_rtd_theme&apos;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="68" column="1" bodyfile="conf.py" bodystart="68" bodyend="-1"/>
+        <location file="conf.py" line="66" column="1" bodyfile="conf.py" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1af4fb5d8851ccaade135c2668dd3ced41" prot="public" static="no" mutable="no">
         <type>list</type>

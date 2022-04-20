@@ -62,7 +62,7 @@
 <codeline><highlight class="normal">The<sp/>**roslaunch**<sp/>file<sp/>is<sp/>set<sp/>by<sp/>default<sp/>to<sp/>print<sp/>to<sp/>the<sp/>terminal.<sp/>The<sp/>program<sp/>is<sp/>capable<sp/>of<sp/>**logging**<sp/>and<sp/>can<sp/>be<sp/>set<sp/>to<sp/>do<sp/>so,<sp/>to<sp/>the<sp/>default<sp/>ROS<sp/>logs,<sp/>by<sp/>modifying<sp/>the<sp/>launch<sp/>file<sp/>accordingly.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Node<sp/>structure</highlight></codeline>
-<codeline><highlight class="normal">Image</highlight></codeline>
+<codeline><highlight class="normal">![Node<sp/>Structure](node_structure.drawio.png)</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>Pseudocode</highlight></codeline>
 <codeline><highlight class="normal">###<sp/>controller<sp/>node</highlight></codeline>

@@ -28,6 +28,20 @@
   </compound>
   <compound refid="conf_8py" kind="file"><name>conf.py</name>
   </compound>
+  <compound refid="index_8rst_8txt" kind="file"><name>index.rst.txt</name>
+    <member refid="index_8rst_8txt_1a9aca65248380e5f782c0cda76ecd5e01" kind="variable"><name>file</name></member>
+    <member refid="index_8rst_8txt_1a1b80140953e9c6f42d1ed0b35f852cfe" kind="variable"><name>Apr</name></member>
+  </compound>
+  <compound refid="_l_i_c_e_n_s_e_8txt" kind="file"><name>LICENSE.txt</name>
+    <member refid="_l_i_c_e_n_s_e_8txt_1ad5e66007a086e143d60e0a9a8be517ac" kind="variable"><name>free</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1af40e4e4d4738085f88f91bd94a53e77f" kind="variable"><name>source</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1acfa87c8603927f240cd595e2b8d72cf4" kind="variable"><name>projects</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1a0d32404bdd3d5cc350fefb5f99f1b3dd" kind="variable"><name>license</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1aab784155812aad53e47cdb42b1509f55" kind="variable"><name>download</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1a0238b3ded4e878f7654973271d8ac9fa" kind="variable"><name>MIT</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1acc32b7f8a7d817eee09468e93405ae5a" kind="variable"><name>OFL</name></member>
+    <member refid="_l_i_c_e_n_s_e_8txt_1a5752d0e44bf2ed30035110c8a0d94bc4" kind="variable"><name>attribution</name></member>
+  </compound>
   <compound refid="utils_8h" kind="file"><name>utils.h</name>
     <member refid="utils_8h_1a22d7c3e857afba4903a76181f91ea9fb" kind="function"><name>clearInputBuffer</name></member>
     <member refid="utils_8h_1a46ff89009e317faa9748627b96c755be" kind="function"><name>detectKeyPress</name></member>
@@ -74,10 +88,22 @@
   </compound>
   <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
   </compound>
+  <compound refid="dir_d123a66dd18e26cf5a1c9c0deaca51e7" kind="dir"><name>docs/_static/vendor/fontawesome/5.13.0</name>
+  </compound>
+  <compound refid="dir_585d6f41c8c6e69e0f84b478a34e55d0" kind="dir"><name>docs/_sources</name>
+  </compound>
+  <compound refid="dir_24bdfd42e23ad45096aa4e8985b01b46" kind="dir"><name>docs/_static</name>
+  </compound>
+  <compound refid="dir_49e56c817e5e54854c35e136979f97ca" kind="dir"><name>docs</name>
+  </compound>
+  <compound refid="dir_8b720fc52e3cf0c8371e7fb5e9c68227" kind="dir"><name>docs/_static/vendor/fontawesome</name>
+  </compound>
   <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
   </compound>
   <compound refid="dir_9e62e375869cade4327cfbb9d7a61f1e" kind="dir"><name>include/rt1-assignment3</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_00f61b03cd662ba0fd2d5fca800ca519" kind="dir"><name>docs/_static/vendor</name>
   </compound>
 </doxygenindex>

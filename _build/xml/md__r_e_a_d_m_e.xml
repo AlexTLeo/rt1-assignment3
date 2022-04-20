@@ -59,7 +59,8 @@
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md8">
 <title>Node structure</title>
-<para>Image</para>
+<para><image type="html" name="node_structure.drawio.png" inline="yes"></image>
+</para>
 </sect2>
 <sect2 id="md__r_e_a_d_m_e_1autotoc_md9">
 <title>Pseudocode</title>

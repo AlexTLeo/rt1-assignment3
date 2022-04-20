@@ -73,9 +73,9 @@
 <codeline lineno="63"><highlight class="normal">highlight_language<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;c++&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal">source_suffix<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;.rst&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal">master_doc<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;index&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">#<sp/>html_theme<sp/>=<sp/>&apos;sphinx_rtd_theme&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">html_theme<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;sphinx_rtd_theme&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">#<sp/>html_theme<sp/>=<sp/>&apos;sphinx_material&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal">html_theme<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;sphinx_book_theme&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">#<sp/>html_theme<sp/>=<sp/>&apos;sphinx_book_theme&apos;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Add<sp/>any<sp/>paths<sp/>that<sp/>contain<sp/>custom<sp/>static<sp/>files<sp/>(such<sp/>as<sp/>style<sp/>sheets)<sp/>here,</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">#<sp/>relative<sp/>to<sp/>this<sp/>directory.<sp/>They<sp/>are<sp/>copied<sp/>after<sp/>the<sp/>builtin<sp/>static<sp/>files,</highlight><highlight class="normal"></highlight></codeline>
