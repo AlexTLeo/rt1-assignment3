@@ -38,12 +38,16 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Research Track 1 Assignment 3 Documentation</a><ul>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#index">Index</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a><ul>
 <li><a class="reference internal" href="#controller">Controller</a></li>
 <li><a class="reference internal" href="#user-interface">User Interface</a></li>
 <li><a class="reference internal" href="#user-input-async">User Input Async</a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -72,19 +76,52 @@
              
   <div class="section" id="research-track-1-assignment-3-documentation">
 <h1>Research Track 1 Assignment 3 Documentation<a class="headerlink" href="#research-track-1-assignment-3-documentation" title="Permalink to this headline"></a></h1>
+<p>This is the third assignment of the “Research Track 1” course, for the Robotics Engineering degree, Università di Genova.</p>
+<p>The assignment consists in writing two ROS nodes: a controller for a robot, and a UI. The user can choose one of three methods to command the robot (autonomously, manually, or in assisted driving mode).</p>
+<p>A helper node was also implemented to get input asynchronously, i.e. without blocking the main nodes.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h2>
+<div class="section" id="index">
+<h2>Index<a class="headerlink" href="#index" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 </div>
+<div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h1>
+<p>The simulator requires ROS. Clone this repository into your ROS workspace’s src/ folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://www.github.com/ThanaphonLeonardi/rt1-assignment3
+</pre></div>
+</div>
+<p>It also requires the final_assignment package, the slam_gmapping package, and the ROS navigation stack</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://www.github.com/CarmineD8/final_assignment
+
+$ git clone https://www.github.com/CarmineD8/slam_gmapping
+
+$ sudo apt-get install ros-noetic-navigation
+</pre></div>
+</div>
+<p>Make sure to switch to the noetic branch on the git repositories!</p>
+<p>Launch the simulation.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch final_assignment simulation_gmapping.launch
+</pre></div>
+</div>
+<p>And the node that manages the movement</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch final_assignment move_base.launch
+</pre></div>
+</div>
+<p>Finally, run the controller, ui, helper, and teleop_twist_keyboard node</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch rt1-assignment3 rt1a3.launch
+
+roslaunch rt1-assignment3 rt1a3_teleop.launch
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h1>
 <div class="section" id="controller">
-<h1>Controller<a class="headerlink" href="#controller" title="Permalink to this headline"></a></h1>
+<h2>Controller<a class="headerlink" href="#controller" title="Permalink to this headline"></a></h2>
 <p>Main robot controller. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Alex Thanaphon Leonardi </p>
@@ -266,7 +303,7 @@ Gets info from laser scanner on obstacles surrounding the robot and saves it in 
 
 </div>
 <div class="section" id="user-interface">
-<h1>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline"></a></h1>
+<h2>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline"></a></h2>
 <p>Interface between user and robot controller. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Alex Thanaphon Leonardi </p>
@@ -375,7 +412,7 @@ Gets input asynchronously through node “rt1a3_inputasync” </p>
 </div>
 </div>
 <div class="section" id="user-input-async">
-<h1>User Input Async<a class="headerlink" href="#user-input-async" title="Permalink to this headline"></a></h1>
+<h2>User Input Async<a class="headerlink" href="#user-input-async" title="Permalink to this headline"></a></h2>
 <p>Capture user inputs and publish them. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Alex Thanaphon Leonardi </p>
@@ -425,6 +462,7 @@ Detects the next keypress (in whichever console this node is running in) and pub
 <dd><p>Publisher for “/ui_inputasync”. </p>
 </dd></dl>
 
+</div>
 </div>
 </div>
 
