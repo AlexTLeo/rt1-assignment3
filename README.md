@@ -53,7 +53,7 @@ Both nodes set and get parameters from the parameter server, that can be modifie
 The **roslaunch** file is set by default to print to the terminal. The program is capable of **logging** and can be set to do so, to the default ROS logs, by modifying the launch file accordingly.
 
 ## Node structure
-Image
+![Node Structure](node_structure.drawio.png)
 
 ## Pseudocode
 ### controller node
